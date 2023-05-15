@@ -1,0 +1,21 @@
+﻿@model List<Product>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ProductId</th>           
+            <th scope="col">PathSmallImage</th>
+            <th scope="col">Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td><img src="~/img/@product.PathSmallImage" /></td>
+                <td>@product.Price.ToString("C1")</td>
+            </tr>
+        }
+    </tbody>
+</table>
